@@ -8,6 +8,7 @@
     >
       <el-form
         :model="formItem"
+        status-icon
         :rules="rules"
         ref="ruleForm"
         label-position="right"
@@ -40,16 +41,16 @@
 export default {
   props: ['dialogVisible', 'changeDialogVisible', 'formItem', 'title'],
   data() {
-    let checkJobId = (rule, value, callback) => {
-      if (value === '') {
-        callback(new Error('请输入工号'))
+    var checkJobId = (rule, value, callback) => {
+      if (!value) {
+        return callback(new Error('请输入工号'))
       } else {
         callback()
       }
     }
-    let checkName = (rule, value, callback) => {
-      if (value === '') {
-        callback(new Error('请输入姓名'))
+    var checkName = (rule, value, callback) => {
+      if (!value) {
+        return callback(new Error('请输入姓名'))
       } else {
         callback()
       }
