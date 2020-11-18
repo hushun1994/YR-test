@@ -6,7 +6,7 @@
       :visible.sync="dialogVisible"
       width="50%"
     >
-      <el-form label-position="right" label-width="80px" :model="formItem">
+      <el-form label-position="right" label-width="100px" :model="formItem">
         <el-form-item label="工号">
           <el-input v-model="formItem.id"></el-input>
         </el-form-item>
@@ -15,6 +15,9 @@
         </el-form-item>
         <el-form-item label="研究方向">
           <el-input v-model="formItem.direction"></el-input>
+        </el-form-item>
+        <el-form-item label="是否参与评审" style="text-align: center">
+          <el-switch v-model="formItem.comment"></el-switch>
         </el-form-item>
       </el-form>
       <span slot="footer" class="dialog-footer">
@@ -53,4 +56,8 @@ export default {
 }
 </script>
 
-<style lang="less" scoped></style>
+<style lang="less" scoped>
+div {
+  text-align: start;
+}
+</style>

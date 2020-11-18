@@ -28,8 +28,14 @@
             <span class="jobId">{{ item.id }}</span>
             <span class="name">{{ item.name }}</span>
             <span class="direction">{{ item.direction }}</span>
-            <span class="comment" v-if="item.comment">是</span>
-            <span class="comment" v-else>否</span>
+            <span class="comment">
+              <el-switch
+                v-model="item.comment"
+                active-text="是"
+                inactive-text="否"
+              >
+              </el-switch>
+            </span>
             <span class="opration" @click.stop="editUser(item)">编辑</span>
             <div class="line"></div>
             <span class="opration" @click.stop="deleteItem(index)">删除</span>
@@ -176,7 +182,7 @@ export default {
     .itemWrapper {
       .item {
         font-size: 14px;
-        flex-wrap: nowrap;
+        color: #606266;
         > span {
           display: inline-block;
         }
