@@ -43,7 +43,7 @@ export default {
   data() {
     var checkJobId = (rule, value, callback) => {
       if (!value) {
-        return callback(new Error('请输入工号'))
+        callback(new Error('请输入工号'))
       } else {
         callback()
       }
